@@ -17,7 +17,8 @@ const templateFiles = fs.readdirSync(environment.paths.source)
   .filter((file) => path.extname(file).toLowerCase() === '.html');
 
 const htmlPluginEntries = templateFiles.map((template) => new HTMLWebpackPlugin({
-  inject: true,
+  inject: 'head',
+  scriptLoading: 'blocking',
   hash: false,
   filename: template,
   template: path.resolve(environment.paths.source, template),
