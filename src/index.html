@@ -2,17 +2,38 @@
 <html lang="en">
 
   <head>
-    <title>Third Axis 2021 WebXR Boilerplate</title>
+    <title>Aframe Hen Components</title>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/regenerator-runtime@0.13.7/runtime.min.js"></script>
+    <script src="https://aframe.io/releases/1.1.0/aframe.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.1.1/dist/aframe-extras.min.js"></script>
+    <script src="https://cdn.rawgit.com/matthewbryancurtis/aframe-star-system-component/db4f1030/index.js"></script>
+  
   </head>
-
+   
   <body>
-    <a-scene>
-      <a-box opacity=".2" position="-1 0.5 -3" rotation="0 45 0" color="#4CC3D9"></a-box>
-      <a-sphere position="0 1.25 -5" radius="1.25" color="#EF2D5E"></a-sphere>
-      <a-cylinder position="1 0.75 -3" radius="0.5" height="1.5" color="#FFC65D"></a-cylinder>
-      <a-plane position="0 0 -4" rotation="-90 0 0" width="4" height="4" color="#7BC8A4"></a-plane>
-      <a-sky color="#ECECEC"></a-sky>
-    </a-scene>
+    <a-scene renderer="antialias: true;colorManagement: true;physicallyCorrectLights: true;highRefreshRate:true">
+      <a-entity star-system="count: 1000"></a-entity>
+      <a-assets>
+        <a-cubemap id="indoor">
+          <img src="../images/content/indoor/posx.png">
+          <img src="../images/content/indoor/negx.png">
+          <img src="../images/content/indoor/posy.png">
+          <img src="../images/content/indoor/negy.png">
+          <img src="../images/content/indoor/posz.png">
+          <img src="../images/content/indoor/negz.png">
+        </a-cubemap>
+      </a-assets>
+      <a-camera look-controls="pointerLockEnabled:true" fov="50"></a-camera>
+      <a-sky color="grey"></a-sky>
+       <a-gltf-model cube-env-map="path: #indoor; extension: png; reflectivity: 1;" animation-mixer autoscale="2" src hen-model="metalness:1;roughness:.5;url:79743;" position="0 0.5 -3"> </a-gltf-model>
+   
+       <!-- Default lighting injected by A-Frame. -->
+          <a-entity light="type: ambient; intensity: 1; color: #BBB"></a-entity>
+          <a-entity light="type: directional; color: #FFF; intensity: 1" position="-0.5 1 1"></a-entity>
+  
+    
+      </a-scene>
   </body>
 
 </html>
