@@ -24,18 +24,24 @@ AFRAME.registerComponent('hen', {
   },
   prepareMap: function() {
     this.traverseMesh(node => {
-
         this.roughMap[node.uuid] = node.material.roughness
         this.metalMap[node.uuid] = node.material.metalness
         this.nameMap[node.uuid] = node.material.name
- 
     })
   },
   update: function () {
+    let cubemap = ''
     this.traverseMesh(node => {
-       
-        node.material.metalness = this.metalMap[node.uuid]
-        node.material.roughness = this.roughMap[node.uuid] 
+      
+      node.material.metalness = this.metalMap[node.uuid]
+      node.material.roughness = this.roughMap[node.uuid] 
+      
+      if(node.material.envMapIntensity==1){
+
+      } else {
+        this.el.removeAttribute('cube-env-map');
+      }
+        
     })
   },
   traverseMesh: function(func) {
