@@ -7,7 +7,6 @@
     <script src="https://cdn.jsdelivr.net/npm/regenerator-runtime@0.13.7/runtime.min.js"></script>
     <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
     <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.1.1/dist/aframe-extras.min.js"></script>
-  
   </head>
    
   <body>
@@ -23,17 +22,21 @@
           <img src="../images/content/indoor/negz.png">
         </a-cubemap>
       </a-assets>
+
       <a-camera look-controls="pointerLockEnabled:true" fov="50"></a-camera>
       <a-sky color="white"></a-sky>
 
-      <a-gltf-model animation-mixer cube-env-map="path: ../images/content/indoor/; extension: png; reflectivity: 1;" autoscale="2" hen-model="url:https://www.hicetnunc.xyz/objkt/37212" position="0 0.5 -3"> </a-gltf-model>
-   
-      
-        <!-- Default lighting injected by A-Frame. -->
-      <a-entity light="type: ambient; intensity: 1; color: #BBB"></a-entity>
-      <a-entity light="type: directional; color: #FFF; intensity: 2" position="-0.5 1 1"></a-entity>
+      <a-gltf-model 
+  
+      cube-env-map="path: ../images/content/indoor/; extension: png; reflectivity: 1;" 
+      hen-model="animated:true;scale:2;url:https://www.hicetnunc.xyz/objkt/37212" 
+      position="0 1.6 -3"> </a-gltf-model>
 
-    
+      <a-gltf-model 
+  
+      cube-env-map="path: ../images/content/indoor/; extension: png; reflectivity: 1;" 
+      hen-model="animated:true;scale:5;url:36899" 
+      position="-2 1.6 -3"> </a-gltf-model>
       </a-scene>
   </body>
 
