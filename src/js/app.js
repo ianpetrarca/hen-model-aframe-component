@@ -3,21 +3,42 @@ import './components/materialMod'
 import './components/autoscale'
 import './components/materials'
 
-AFRAME.registerComponent('hen', {
+
+//ASYNC REST API REQUEST
+async function getTokenInfo(id){
+  try {
+      if(id.includes('xyz')){
+        id = id.substring(32)
+      }
+      const res = await axios.get('https://api.better-call.dev/v1/tokens/mainnet/metadata?token_id=' + id.toString())
+      return res.data[0]
+  } catch (error) {
+      return null
+  }
+}
+
+
+AFRAME.registerComponent('hen-model', {
   schema: {
-    opacity: {type: 'number', default: 1}
+    url: {type:'string'}
   },
   init: function () {
+
+    getTokenInfo(this.data.url).then((response) => {  
+      let id = response.artifact_uri
+      this.el.setAttribute('src','https://cloudflare-ipfs.com/ipfs/'+ id.slice(7,id.length))
+    }).catch((response) => { 
+        
+    })
+
     this.metalMap = {}
     this.roughMap = {}
-    this.nameMap = {}
+
     this.prepareMap.bind(this)
     this.traverseMesh.bind(this)
 
-    this.el.addEventListener('model-loaded', e=> 
+    this.el.addEventListener('model-loaded', evt => 
      {
-      console.log(e)
-      console.log("model-loaded")
       this.prepareMap()
       this.update()
     });
@@ -26,20 +47,16 @@ AFRAME.registerComponent('hen', {
     this.traverseMesh(node => {
         this.roughMap[node.uuid] = node.material.roughness
         this.metalMap[node.uuid] = node.material.metalness
-        this.nameMap[node.uuid] = node.material.name
     })
   },
   update: function () {
-    let cubemap = ''
     this.traverseMesh(node => {
-      
+  
       node.material.metalness = this.metalMap[node.uuid]
       node.material.roughness = this.roughMap[node.uuid] 
       
-      if(node.material.envMapIntensity==1){
-
-      } else {
-        this.el.removeAttribute('cube-env-map');
+      if(!node.material.envMapIntensity==1){
+       this.el.removeAttribute('cube-env-map');
       }
         
     })
