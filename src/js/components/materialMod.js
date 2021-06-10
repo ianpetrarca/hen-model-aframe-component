@@ -66,10 +66,12 @@ AFRAME.registerComponent("hen-model", {
           if (this.id) {
               if (this.id.toLowerCase() === node.material.name.toLowerCase()) {
                   this.material = node.material
+                   
               }
               return;
           }
           this.material = node.material;
+      
       });
   },
   applyModifiers: function () {
