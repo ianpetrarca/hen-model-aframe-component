@@ -11,12 +11,11 @@
 
 #### Code Examples
 
-- [Metadata Generator](https://github.com/ianpetrarca/hicetnunc_api_guide/tree/main/web) (Web Example): [https://hen-metadata.web.app/](https://hen-metadata.web.app/)
+- [Single Model Example](https://github.com/ianpetrarca/hicetnunc_api_guide/tree/main/web) (Web Example): [https://hen-metadata.web.app/](https://hen-metadata.web.app/)
     - Fetches OBJKT meta data using a hicetnunc.xyz URL or OBJKT ID
     - Uses Webpack, Axios and Tailwind CSS
 
-- Get User Collection (Node.js Script): [Better Call Dev Example](/node-bcd/index.js)  
-    - Node.js example showing how to download a hic et nunc collection by a tz address
+
 
 #### Big Picture
 
