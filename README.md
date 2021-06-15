@@ -20,31 +20,38 @@
 
   <head>
     <title>Aframe Hen Components</title>
-    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    
+    <!--  API Scripts    -->
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script> 
     <script src="https://cdn.jsdelivr.net/npm/regenerator-runtime@0.13.7/runtime.min.js"></script>
+    
+    <!--  Aframe and Aframe Extras Library    -->
     <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
     <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.1.1/dist/aframe-extras.min.js"></script>
+    
+    <!--  Hen-Aframe Component Hosted on CDN    -->
     
     <script src="https://storage.googleapis.com/titanpointe/hen.js"></script>
     
   </head>
    
   <body>
+  
+    <!--  Aframe Scene with color management and high refresh rate enabled  -->
     <a-scene renderer="antialias: true;colorManagement: true;physicallyCorrectLights: true;highRefreshRate:true">
   
-      <!-- Default lighting injected by A-Frame. -->
+      <!-- Camera, Lighting and Sky -->
       <a-entity light="type: ambient; color: #BBB;intensity:1"></a-entity>
       <a-entity light="type: directional; color: #FFF; intensity: 0.6" position="-0.5 1 1"></a-entity>
-
       <a-camera position="0 1.6 0" look-controls="pointerLockEnabled:true" fov="50"></a-camera>
       <a-sky color="black"></a-sky>
-
+      
+      <!-- Hen-3D Component       -->
       <a-gltf-model hen-model="scale:3;animated:true;reflection:true;url:https://www.hicetnunc.xyz/objkt/128211" 
-      position="0 1 -3"> 
-    
-    </a-gltf-model>
+      position="0 1 -3"> </a-gltf-model>
 
       </a-scene>
+      
   </body>
 
 </html>
