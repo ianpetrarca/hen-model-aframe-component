@@ -1,5 +1,5 @@
 <p style="margin-top:50px" align="center">
-<img src="https://www.hicetnunc.xyz/og-image.jpg" alt="alt text" width="400">
+<img src="https://user-images.githubusercontent.com/1003196/122106218-a4be3380-cde7-11eb-9e64-ffff2085d151.png" alt="alt text" width="400">
 </p>
 
 # hic et nunc API Guide
