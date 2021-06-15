@@ -16,7 +16,8 @@ async function getTokenInfo(id){
     schema: {
       url: {type:'string'}, //Hicetnunc.xyz URL or OBJKT ID input
       scale: {type:'number', default: 1}, //Scale of Model
-      animated: {type:'boolean', default:true} //Animate model
+      animated: {type:'boolean', default:true}, //Animate model
+      reflection: {type:'boolean', default:true} //Animate model
     },
     init: function () {
   
@@ -34,7 +35,15 @@ async function getTokenInfo(id){
       } else {
         this.el.setAttribute('animation-mixer', '')
       }
-  
+
+      if(!this.data.reflection){
+
+      }else {
+        this.el.setAttribute('cube-env-map', 'path: https://storage.googleapis.com/titanpointe/indoor/; extension: png; reflectivity: 1')
+      }
+
+
+    
       // Variables for capturing the roughness/metalness values of each material in the model
       this.metalMap = {}
       this.roughMap = {}
@@ -42,14 +51,37 @@ async function getTokenInfo(id){
       //Functions for Material parameters
       this.prepareMap.bind(this) //Parse Materials
       this.traverseMesh.bind(this) //Apply Materials 
-  
-      //Once Model is loaded add scale and material parameters
+      
+      //Loading Text
+      var text = document.createElement('a-text');
+      text.setAttribute('value','Loading...')
+      text.setAttribute('position', {x: -.5, y: 0, z: 0});
+      this.el.appendChild(text)
+
+      //Loading Spinner Box
+      var loadBox = document.createElement('a-entity')
+      loadBox.setAttribute('geometry', {
+        primitive: 'box',
+        height: .25,
+        width: .25,
+        depth:.25
+      });
+
+      //Add Loadbox Animations
+      loadBox.setAttribute('position', {x: 0, y: .5, z: 0});
+      loadBox.setAttribute('material','wireframe','true');
+      loadBox.setAttribute('animation', 'property: rotation; to: 0 360 360;loop:true;dir:alternate;dur:3000');
+      this.el.appendChild(loadBox)
+
       this.el.addEventListener('model-loaded', evt => 
        {
+        this.el.removeChild(text)
+        this.el.removeChild(loadBox)
         this.scale();
         this.prepareMap()
         this.update()
       });
+
     },
     prepareMap: function() { //Parse Model Nodes for material information
       this.traverseMesh(node => {
