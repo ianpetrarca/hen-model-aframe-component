@@ -2,6 +2,10 @@
 <img src="https://user-images.githubusercontent.com/1003196/122106218-a4be3380-cde7-11eb-9e64-ffff2085d151.png" alt="alt text" width="400">
 </p>
 
+<p style="margin-top:50px" align="center">
+<img src="https://user-images.githubusercontent.com/1003196/122106356-cddec400-cde7-11eb-9311-7e43c840dea1.png" alt="alt text" width="400">
+</p>
+
 # hic et nunc API Guide
 ### Build websites and Node.js scripts with [hic et nunc](hicetnunc.xyz/) data
 #### hic et nunc is a decentralized NFT marketplace built on the Tezos blockchain. This Github repo is a guide for using Tezos APIs to build rich web experiences with [Hic et nunc](hicetnunc.xyz/) data.
