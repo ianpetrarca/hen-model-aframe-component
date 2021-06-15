@@ -7,7 +7,7 @@
 # hic et nunc 3D Model Aframe Component
 
 ### Use 3D Models from [hic et nunc](hicetnunc.xyz/) in your Aframe WebXR Scenes!
-#### hic et nunc is a decentralized NFT marketplace built on the Tezos blockchain. This Github repo is a guide for using Tezos APIs to build rich web experiences with [Hic et nunc](hicetnunc.xyz/) data.
+#### hic et nunc is a decentralized NFT marketplace built on the Tezos blockchain. This Github repo is a guide for using user-created 3D Models in WebXR experiences using the  [Aframe framework](https://aframe.io) data.
 
 #### Code Examples
 
