@@ -4,7 +4,7 @@
 
 
 
-# Use hic et nunc models in Aframe WebXR
+# hic et nunc Aframe Component
 
 ### Build websites and Node.js scripts with [hic et nunc](hicetnunc.xyz/) data
 #### hic et nunc is a decentralized NFT marketplace built on the Tezos blockchain. This Github repo is a guide for using Tezos APIs to build rich web experiences with [Hic et nunc](hicetnunc.xyz/) data.
