@@ -11,23 +11,8 @@
 
 #### Code Examples
 
-- [Single Model Example](https://github.com/ianpetrarca/hicetnunc_api_guide/tree/main/web) 
+- [Glitch.me Example](https://github.com/ianpetrarca/hicetnunc_api_guide/tree/main/web) 
 
-
-#### Big Picture
-
-Every single OBJKT in hic et nunc has its metadata and IPFS link publicly available for download via a Tezos blockchain explorer API. The goal of this guide is to help developers integrate hic et nunc content into their applications and websites. Use these tools to build the future of distributed creative content.
-#### Table of Contents  
-- [Introduction](#build-websites-and-nodejs-scripts-with-hic-et-nunc-data)  
-    - [Code Examples](#code-examples)  
-    - [Big Picture](#big-picture)  
-    - [Roadmap](#roadmap)  
-    - [HeN Resources](#hic-et-nunc-resources) 
-    - [Tezos-resources](#tezos-resources) 
-- [General Information](#general-information)  
-- [Tezos APIs](#tezos-api)  
-- [Code Examples](#code-examples)  
-- [Contact](#contact)  
 
 #### Roadmap
 
