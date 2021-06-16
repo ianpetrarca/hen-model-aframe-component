@@ -60,8 +60,9 @@
 #### Component Schema
 | Name | Function | Type | Default |
 | :---         |     :---:      |          ---: |      ---: | 
-| URL   | hic et nunc URL or OBJKT ID     | String    | N/A      |
+| URL   | hic et nunc URL or OBJKT ID     | String    |       |
 | Reflection     | Adds Cubemap Reflection      | Boolean      | True      |
+| Scale     | Scale of Model     | Number      | 1      |
 
 
 
