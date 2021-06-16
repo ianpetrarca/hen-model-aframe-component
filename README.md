@@ -57,9 +57,10 @@
 </html>
 ```
 
-| Left-aligned | Center-aligned | Right-aligned |
+#### Component Schema
+| Name | Function | Type |
 | :---         |     :---:      |          ---: |
-| git status   | git status     | git status    |
+| URL   | hic et nunc URL or OBJKT ID     | String    |
 | git diff     | git diff       | git diff      |
 
 
