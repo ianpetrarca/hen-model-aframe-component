@@ -54,7 +54,6 @@ Axios and Regenerator Runtime are required to use the API portion of this compon
       position="0 1 -3"> </a-gltf-model>
      </a-scene>
   </body>
-
 </html>
 ```
 
