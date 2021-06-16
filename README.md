@@ -14,6 +14,8 @@
 
 #### Using the Component 
 
+Axios and Regenerator Runtime are required to use the API portion of this component**
+
 ```html
 <html lang="en">
 
