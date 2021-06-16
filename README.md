@@ -28,7 +28,7 @@ This component is added to GLTF model Aframe entity
 #### CDN Link
 
 ```html
- <script src="https://storage.googleapis.com/titanpointe/hen.js"></script>
+ <script src="https://cdn.jsdelivr.net/gh/ianpetrarca/hen-model-aframe-component@main/src/js/components/hen.js"></script>
 ```
 
 #### Using the Component 
