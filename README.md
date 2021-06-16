@@ -58,10 +58,10 @@
 ```
 
 #### Component Schema
-| Name | Function | Type |
-| :---         |     :---:      |          ---: |
-| URL   | hic et nunc URL or OBJKT ID     | String    |
-| git diff     | git diff       | git diff      |
+| Name | Function | Type | Default |
+| :---         |     :---:      |          ---: |      ---: | 
+| URL   | hic et nunc URL or OBJKT ID     | String    | N/A      |
+| Reflection     | Adds Cubemap Reflection      | Boolean      | True      |
 
 
 
