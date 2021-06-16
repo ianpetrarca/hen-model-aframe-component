@@ -8,6 +8,19 @@
 ### Use 3D Models from [hic et nunc](hicetnunc.xyz/) in your Aframe WebXR Scenes!
 #### hic et nunc is a decentralized NFT marketplace built on the Tezos blockchain. This Github repo is a guide for using user-created 3D Models in WebXR experiences using [Aframe](https://aframe.io).
 
+####
+
+This component is added to GLTF model Aframe entity 
+```html
+      <a-gltf-model hen-model="scale:3;
+                    animated:true;
+                    reflection:true;
+                    url:https://www.hicetnunc.xyz/objkt/128211" 
+                    position="0 1 -3">
+      </a-gltf-model>
+
+```
+
 #### Code Examples
 
 - [Glitch.me Example](https://glitch.com/edit/#!/hen-model-aframe-component) 
