@@ -25,6 +25,12 @@ This component is added to GLTF model Aframe entity
 
 - [Glitch.me Example](https://glitch.com/edit/#!/hen-model-aframe-component) 
 
+#### CDN Link
+
+```html
+ <script src="https://storage.googleapis.com/titanpointe/hen.js"></script>
+```
+
 #### Using the Component 
 
 Axios and Regenerator Runtime are required to use the API portion of this component**
