@@ -11,26 +11,65 @@
 
 #### Code Examples
 
-- [Glitch.me Example](https://github.com/ianpetrarca/hicetnunc_api_guide/tree/main/web) 
+- [Glitch.me Example](https://glitch.com/edit/#!/hen-model-aframe-component) 
 
+#### Using the Component 
 
-#### Roadmap
+```html
+<html lang="en">
 
-1) ~~Release initial Better Call Dev Nodejs examples, Web Metadata Generator and Github Readme~~
-3) Implement rate-limiting to outgoing messages using Bottleneck library
-4) Add TZKT.IO API and compare against Better Call Dev for performance
-5) Create a Node.js CLI for developers to quickly get OBJKT/tz data
-6) Convert example code snippets into full NPM library i.e: npm install hen-tools
+  <head>
+    <title>Aframe Hen Components</title>
+    
+    <!--  API Scripts    -->
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script> 
+    <script src="https://cdn.jsdelivr.net/npm/regenerator-runtime@0.13.7/runtime.min.js"></script>
+    
+    <!--  Aframe and Aframe Extras Library    -->
+    <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.1.1/dist/aframe-extras.min.js"></script>
+    
+    <!--  Hen-Aframe Component Hosted on CDN    -->
+    
+    <script src="https://storage.googleapis.com/titanpointe/hen.js"></script>
+    
+  </head>
+   
+  <body>
+  
+    <!--  Aframe Scene with color management and high refresh rate enabled  -->
+    <a-scene renderer="antialias: true;colorManagement: true;physicallyCorrectLights: true;highRefreshRate:true">
+  
+      <!-- Camera, Lighting and Sky -->
+      <a-entity light="type: ambient; color: #BBB;intensity:1"></a-entity>
+      <a-entity light="type: directional; color: #FFF; intensity: 0.6" position="-0.5 1 1"></a-entity>
+      <a-camera position="0 1.6 0" look-controls="pointerLockEnabled:true" fov="50"></a-camera>
+      <a-sky color="black"></a-sky>
+      
+      <!-- Hen-3D Component       -->
+      <a-gltf-model hen-model="scale:3;animated:true;reflection:true;url:https://www.hicetnunc.xyz/objkt/128211" 
+      position="0 1 -3"> </a-gltf-model>
+
+      </a-scene>
+      
+  </body>
+
+</html>
+```
+
+#### Component Schema
+| Name | Function | Type | Default |
+| :---         |     :---:      |          ---: |      ---: | 
+| URL   | hic et nunc URL or OBJKT ID     | String    |       |
+| Reflection     | Adds Cubemap Reflection      | Boolean      | True      |
+| Scale     | Scale of Model     | Number      | 1      |
+| Animated     | Enable Model Animation    | Boolean      | True      |
+
 
 #### Hic et nunc Resources
 - [Hic et nunc Tools](hicetnunc.tools/)
 - [Hic et nunc Discord](https://discord.gg/g7VQt5pJ)
 - [Hic et nunc Github](https://github.com/hicetnunc2000/)
-
-#### Tezos Resources
-- [Tezos Block Explorer](http://tzkt.io/)
-- [Better Call Dev API](https://better-call.dev/)
-- [TZKT API Docs](https://api.tzkt.io/)
 
 # hic et nunc
 *here and now* 
@@ -41,92 +80,6 @@
 [Hic et nunc](hicetnunc.xyz/) is a decentralized NFT marketplace built on the Tezos blockchain. It enables users to create, sell and interact with Tezos NFTs called OBJKTS. Each OBJKT holds a single artwork containing a 3d model, image, video, html snippet, glsl shader, etc. Hic et nunc lets creators limit how many digital versions of their work are in existence.
 
 When a user uploads their content to hic et nunc, the actual file is uploaded to [IPFS](https://ipfs.io/), a decentralized storage network. The other metadata is stored in the Tezos blockchain. 
-
-In order to fully appreciate hic et nunc, a basic knowledge of decentralized systems, cryptocurrency and blockchains is useful, check out the [General Information](#general-information) section.
-
-# IPFS Link
-
-The Tezos API returns a link to an OBJKTs IPFS file in a hash-format. In order to download the asset you must append the cloudflare IPFS cdn string:
-
-```ruby
- 'https://cloudflare-ipfs.com/ipfs/'
-```
-
-The Tezos API will give you an IPFS Hash that looks like:
-
-```ruby
- 'ipfs://QmNrhZHUaEqxhyLfqoq1mtHSipkWHeT31LNHb1QEbDHgnc'
-```
-
-Combine the Cloudflare CDN base URL with the IPFS hash:
-
-```ruby
- 'https://cloudflare-ipfs.com/ipfs/QmNrhZHUaEqxhyLfqoq1mtHSipkWHeT31LNHb1QEbDHgnc'
-```
-
-# Tezos API
-
-In order to get metadata on a Tezos Wallet Address or hic et nunc OBJKT ID, you must interact with a Tezos blockchain explorer API. This guide focuses on the two most popular Tezos Blockchain Explorer APIS:
-
-- [Better Call Dev API](https://better-call.dev/)
-- ~~[Tezos Block Explorer](http://tzkt.io/)~~ (coming soon)
-
-To get data from the above APIs we must send a REST message to their public API endpoint URLs. This can be done using Node.js and the [Axios](https://www.npmjs.com/package/axios) library. 
-
-Here is an example of using Node.js to request an OBJKT's data using Node.js:
-
-Check out more Node.js examples [here](/node-bcd)  
-
-```ruby
-async function getTokenInfo(id){
-    try {
-        const res = await axios.get('https://api.better-call.dev/v1/tokens/mainnet/metadata?token_id=' + id.toString())
-        return res.data[0]
-    } catch (error) {
-        return null
-    }
-}
-
-getTokenInfo(36899)
-
-```
-
-Response:
-
- ![image](https://user-images.githubusercontent.com/1003196/118856635-2b452b00-b8a5-11eb-8b27-ecc433f65e45.png)
-
-
-
-
-
-# Code Examples
-View more in depth documentation inside of each example's folder:
- 
-- [Better Call Dev Node.js Examples](/node-bcd)  
-- [Metadata Generator Example](/web)  
-- ~~[TZKT Node.js Examples]~~ (coming soon)
-
-
-# General Information
-
-
-#### Decentralized System
-
-A decentralized system is one where a single entity does not have full control over the decision making, additions and upgrades of the system. A decentralized system is inherently communal, serving groups of interconnected relevant parties that want to transact with trust. In many cases decentralization is impossible to reach, a best attempt.
-
-[Explainer Video on Decentralization](https://youtu.be/SrA7XTDCtok)
-
-#### Blockchain 
-
-A blockchain is a database that is built specifically to run on a decentralized p2p network and requires a set of 'checks and balances' to read, write and interact with it. Depending on the implementation, a blockchain can be either decentralized or centralized. Decentralization lends itself to certain ideas and for now the most common implementation of a decentralized blockchain is a cryptocurrency. 
-
-#### Cryptocurrency 
-
-A cryptocurrency is a digital medium to transact value on network not owned by a single entity or nation-state. Please refer to the [Bitcoin White Paper](https://bitcoin.org/bitcoin.pdf) and Dr. Daniel Kim's [video](https://www.youtube.com/watch?v=aC9Uu5BUxII) on monetary policy, inflation, central banking, encryption, Bitcoin and Monero.
-
-#### NFT
-
-An NFT stands for 'non-fungible-token' and was originally created as one of many smart contract types to use on the Ethereum network. Unlike a currency, an NFT is a receipt that uses a private key to verify your assocation to certain files, items and events that happen on the blockchain. NFTs are collected in wallets, which act as your digital backpack to collect moments and digital blockchain goods. 
 
 # Contact
 Created by [@ianpetrarca](https://www.twitter.com/ianpetrarca) - tz1LobSdhfUqYpMojXWHQLJPhFLEzUEd9JAn
