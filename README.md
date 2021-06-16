@@ -63,7 +63,7 @@
 | URL   | hic et nunc URL or OBJKT ID     | String    |       |
 | Reflection     | Adds Cubemap Reflection      | Boolean      | True      |
 | Scale     | Scale of Model     | Number      | 1      |
-
+| Animated     | Enable Model Animation    | Boolean      | True      |
 
 
 #### Hic et nunc Resources
