@@ -57,6 +57,13 @@
 </html>
 ```
 
+| Left-aligned | Center-aligned | Right-aligned |
+| :---         |     :---:      |          ---: |
+| git status   | git status     | git status    |
+| git diff     | git diff       | git diff      |
+
+
+
 #### Hic et nunc Resources
 - [Hic et nunc Tools](hicetnunc.tools/)
 - [Hic et nunc Discord](https://discord.gg/g7VQt5pJ)
