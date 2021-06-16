@@ -15,7 +15,7 @@
 
 #### Using the Component 
 
-```
+```html
 <html lang="en">
 
   <head>
