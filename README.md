@@ -12,11 +12,11 @@
 
 This component is added to GLTF model Aframe entity 
 ```html
-      <a-gltf-model hen-model="scale:3;
+      <a-gltf-model hen-model="
+                    scale:3;
                     animated:true;
                     reflection:true;
-                    url:https://www.hicetnunc.xyz/objkt/128211" 
-                    position="0 1 -3">
+                    url:https://www.hicetnunc.xyz/objkt/128211">
       </a-gltf-model>
 
 ```
