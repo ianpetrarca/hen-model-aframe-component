@@ -11,7 +11,7 @@
 
 #### Code Examples
 
-- [Glitch.me Example](https://github.com/ianpetrarca/hicetnunc_api_guide/tree/main/web) 
+- [Glitch.me Example](https://glitch.com/edit/#!/hen-model-aframe-component) 
 
 #### Using the Component 
 
