@@ -28,6 +28,8 @@ This component is added to GLTF model Aframe entity
 #### CDN Link
 
 ```html
+ <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script> 
+ <script src="https://cdn.jsdelivr.net/npm/regenerator-runtime@0.13.7/runtime.min.js"></script>
  <script src="https://cdn.jsdelivr.net/gh/ianpetrarca/hen-model-aframe-component@main/src/js/components/hen.js"></script>
 ```
 
@@ -45,7 +47,7 @@ Axios and Regenerator Runtime are required to use the API portion of this compon
     <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
     <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.1.1/dist/aframe-extras.min.js"></script>
     <!--  Hen-Aframe Component Hosted on CDN    -->
-    <script src="https://storage.googleapis.com/titanpointe/hen.js"></script>
+     <script src="https://cdn.jsdelivr.net/gh/ianpetrarca/hen-model-aframe-component@main/src/js/components/hen.js"></script>
   </head>
   <body>
     <!--  Aframe Scene with color management and high refresh rate enabled  -->
